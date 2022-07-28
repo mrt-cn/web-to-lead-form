@@ -52,13 +52,16 @@ button:hover {
 /* Float cancel and signup buttons and add an equal width */
 .cancelbtn, .signupbtn {
   margin:5px;
-  float: left;
+  float: center;
   width: 25%;
 }
 
 /* Add padding to container elements */
 .container {
   padding: 16px;
+}
+.clearfix {
+  text-align:center;
 }
 
 /* Clear floats */
@@ -114,8 +117,9 @@ button:hover {
     <p>By creating a Lead you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
 
     <div class="clearfix">
-      <button type="button" class="cancelbtn">Cancel</button>
       <button type="submit" class="signupbtn">Sign Up</button>
+      <button type="button" class="cancelbtn">Cancel</button>
+      
     </div>
   </div>
 </form>
