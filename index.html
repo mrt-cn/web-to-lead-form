@@ -1,35 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://triforcia-4ad-dev-ed.develop.lightning.force.com/lightning.out.js"></script>
   <title>Page Title</title>
 </head>
 <body>
   <h1>Lead Form</h1>
-  <div id="Container"></div>
-  <script>
-    const url = 'https://triforcia-4ad-dev-ed.develop.lightning.force.com';
-    const appName = 'c:MyLeadFormApp'; // c is the default namespace, replace it if you have a custom namespace
-
-    let lightningInit = function() {
-      $Lightning.use(appName, function() {
-        $Lightning.createComponent(
-          'c:MyLeadForm', // Replace "c" with your custom namespace, if applicable
-          {},
-          'Container',
-          function(component) {
-            console.log('LWC component added to the page');
-          }
-        );
-      }, url);
-    };
-
-    // Initialize Lightning Out after the Lightning Out library is fully loaded
-    if (window.$Lightning) {
-      lightningInit();
-    } else {
-      document.addEventListener('lightningOutReady', lightningInit);
-    }
-  </script>
+  <iframe src="https://triforcia-4ad-dev-ed.develop.lightning.force.com/c/YourAuraComponentName.app" width="100%" height="500" frameborder="0"></iframe>
 </body>
 </html>
