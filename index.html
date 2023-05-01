@@ -5,11 +5,11 @@
   <script>
     function loadLightningOut() {
       var scriptEl = document.createElement('script');
-      scriptEl.src = 'https://triforcia-4ad-dev-ed.develop.lightning.force.com/auraFW/javascript/8kZGkKvTtT27rC1Zzk8WxQ/aura_prod_compat.js';
+      scriptEl.src = 'https://triforcia-4ad-dev-ed.develop.my.salesforce.com/auraFW/javascript/8kZGkKvTtT27rC1Zzk8WxQ/aura_prod_compat.js';
       scriptEl.onload = function() {
         $A.initAsync({
           appName: 'c:MyLeadFormApp',
-          host: 'https://triforcia-4ad-dev-ed.develop.lightning.force.com',
+          host: 'https://triforcia-4ad-dev-ed.develop.my.salesforce.com',
           userAgent: 'lightning out'
         });
 
