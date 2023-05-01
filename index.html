@@ -1,209 +1,33 @@
-<!-- <!DOCTYPE html>
-<html>
-<head>
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-<style>
-body {font-family: Arial, Helvetica, sans-serif; }
-* {box-sizing: border-box}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
-}
-
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
-  outline: none;
-}
-
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
-}
-
-/* Set a style for all buttons */
-button {
-  background-color: #04AA6D;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  border-radius: 10px;
-}
-
-button:hover {
-  opacity:1;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  padding: 14px 20px;
-  background-color: #f44336;
-}
-
-/* Float cancel and signup buttons and add an equal width */
-.cancelbtn, .signupbtn {
-  margin:5px;
-  float: center;
-  width: 25%;
-}
-
-/* Add padding to container elements */
-.container {
-  padding: 16px;
-}
-.clearfix {
-  text-align:center;
-}
-
-/* Clear floats */
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-/* Change styles for cancel button and signup button on extra small screens */
-@media screen and (max-width: 300px) {
-  .cancelbtn, .signupbtn {
-     width: 100%;
-  }
-}
-</style>
-</head>
-<body>
-
-<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST" style="border:1px solid #ccc">
-  <div class="container">
-  <h1>Welcome!</h1>
-    <p>Please fill in this form to create a Lead.</p>
-    <hr>
-    <input type=hidden name="oid" value="00D8V000000j8e8">
-		<input type=hidden name="retURL" value="http://">
-
-
-
-		<label for="first_name">First Name</label>
-	  	<input  id="first_name" maxlength="40" name="first_name" size="20" type="text" placeholder="First Name" required /><br>
-
-		<label for="last_name">Last Name</label>
-	  	<input  id="last_name" maxlength="80" name="last_name" size="20" type="text" placeholder="Last Name" required /><br>
-
-		<label for="email">Email</label>
-	  	<input  id="email" maxlength="80" name="email" size="20" type="text" placeholder="Enter Email" required /><br>
-
-		<label for="company">Company</label>
-	  	<input  id="company" maxlength="40" name="company" size="20" type="text" placeholder="Enter Company Name" required /><br>
-
-		<label for="city">City</label>
-	  	<input  id="city" maxlength="40" name="city" size="20" type="text" placeholder="Enter your city" /><br>
-
-		<label for="state">State/Province</label>
-	  	<input  id="state" maxlength="20" name="state" size="20" type="text" placeholder="Enter your state" /><br>
-
-		
-    <label>
-      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-    </label>
-    
-    <p>By creating a Lead you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
-
-    <div class="clearfix">
-      <button type="submit" class="signupbtn">Sign Up</button>
-      <button type="button" class="cancelbtn">Cancel</button>
-      
-    </div>
-  </div>
-</form>
-
-</body>
-</html>
--->
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body onload="init()">
-	
-	<h1>Merhaba Hoşgeldiniz </h1>
-	<h3> Lütfen formu doldurunuz </h3>
-	<div id="leadFormContainer">
-		
-	</div>
-
-	
-
-	
-	<script src="https://triforcia-4ad-dev-ed.develop.lightning.force.com/lightning.force.com/lightning.out.js"></script>
-
-	
-	<script src="https://triforcia-4ad-dev-ed.develop.lightning.force.com/apex/leadform"></script>
-	<script>
-	       $Lightning.use("c:LeadFormApp", function() {
-		   $Lightning.createComponent(
-		       "c:leadFrom",
-		       {},
-		       "leadFormContainer",
-		       function(cmp) {
-			   console.log("Component created");
-		       }
-		   );
-     		 });
-   </script>
-
-
-
-</body>
-</html>
--->
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="https://triforcia-4ad-dev-ed.develop.lightning.force.com/lightning.out.js"></script>
-
-
   <title>Page Title</title>
+  <script>
+    function loadLightningOut() {
+      var scriptEl = document.createElement('script');
+      scriptEl.src = 'https://triforcia-4ad-dev-ed.develop.lightning.force.com/auraFW/javascript/8kZGkKvTtT27rC1Zzk8WxQ/aura_prod_compat.js';
+      scriptEl.onload = function() {
+        $A.initAsync({
+          appName: 'c:MyLeadFormApp',
+          host: 'https://triforcia-4ad-dev-ed.develop.lightning.force.com',
+          userAgent: 'lightning out'
+        });
+
+        $A.get('e.force:navigateToComponent', function(e) {
+          e.setParams({
+            componentDef: 'c:MyLeadForm',
+            componentAttributes: {}
+          });
+          e.fire();
+        });
+      };
+      document.head.appendChild(scriptEl);
+    }
+  </script>
 </head>
 <body>
   <h1>Lead Form</h1>
   <div id="Container"></div>
-  <script>
-    const url = 'https://triforcia-4ad-dev-ed.develop.lightning.force.com';
-    const appName = 'c:MyLeadFormApp'; // c is the default namespace, replace it if you have a custom namespace
-
-    let lightningInit = function() {
-      $Lightning.use(appName, function() {
-        $Lightning.createComponent(
-          'c:MyLeadForm', // Replace "c" with your custom namespace, if applicable
-          {},
-          'Container',
-          function(component) {
-            console.log('LWC component added to the page');
-          }
-        );
-      }, url);
-    };
-
-    // Initialize Lightning Out after the Lightning Out library is fully loaded
-    if (window.$Lightning) {
-      lightningInit();
-    } else {
-      document.addEventListener('lightningOutReady', lightningInit);
-    }
-  </script>
+  <button onclick="loadLightningOut()">Load Lead Form</button>
 </body>
 </html>
-
