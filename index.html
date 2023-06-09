@@ -5,6 +5,17 @@
 </head>
 <body>
   <h1>Lead Form</h1>
-  <iframe src="https://triforcia-4ad-dev-ed.develop.lightning.force.com/c/YourAuraComponentName.app" width="100%" height="500" frameborder="0"></iframe>
+  <script src="https://usafirmware.my.salesforce-sites.com/lightning/lightning.out.js"></script>
+<div id="lightningLocator"></div>
+<script>
+    $Lightning.use("c:WEBAPPFORMapp", function() {
+        $Lightning.createComponent(
+            "c:WEBAPPFORM",
+            {},
+            "lightningLocator",
+            function(cmp) {}
+        );
+    });
+</script>
 </body>
 </html>
